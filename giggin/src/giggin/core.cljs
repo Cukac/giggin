@@ -8,10 +8,10 @@
 (defn app
   []
   [:div.container
-  [header]
-  [gigs]
-  [orders]
-  [footer]])
+    [header]
+    [gigs]
+    [orders]
+    [footer]])
 
 (defn ^:export main
   []
