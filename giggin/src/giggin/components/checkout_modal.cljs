@@ -20,4 +20,4 @@
                   [:img.payment-logo {:src "/img/stripe.svg" :alt "Stripe logo"}]]]
                 [:div.modal__footer
                  [:button.btn.btn--link.float--left
-                  "Cancel"]]]]])))
+                "Cancel"]]]]])))
