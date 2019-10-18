@@ -10,8 +10,8 @@
                             :on-change #(swap! values assoc (keyword id) (.. % -target -value))}]])
 
 (defn gig-editor
-      [modal values]
-      [:div.modal (when @modal {:class "active"})
+      [modal values upsert-gig toggle-modal]
+      [:div.modal (when (:active @modal) {:class "active"})
        [:div.modal__overlay]
        [:div.modal__container
         [:div.modal__body
@@ -40,7 +40,8 @@
            [:i.form__icon]]]]
         [:div.modal__footer
          [:button.btn.btn--link.float--left
-          {:on-click #(reset! modal false)}
+          {:on-click #(toggle-modal {:active false :gig {}})}
           "Cancel"]
          [:button.btn.btn--secondary
+          {:on-click #(upsert-gig @values)}
           "Save"]]]])
